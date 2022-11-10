@@ -64,7 +64,7 @@ cat $url/recon/live_subs.txt | wc -l
 #-----------------------------------Enumurating Urls-----------------------------------------
 #--------------------------------------------------------------------------------------------------
 echo "[+]Enumurating Params From Paramspider...." 
-python3 /opt/paramspider/paramspider.py --level high -d $url -p noor -o $1/recon/urls.txt
+python3 /opt/paramspider/paramspider.py --level high -d $url -p 3sr -o $1/recon/urls.txt
 echo "[+]Enumurating Params From Waybackurls...." 
 cat $1/recon/live_subs.txt | waybackurls | sort -u >> $1/recon/urls.txt
 #echo "[+]Enumurating Params From gau Tool...." 
@@ -83,7 +83,7 @@ cat $url/recon/final_urls.txt | wc -l
 #-----------------------------------Enumurating Parameters-----------------------------------------
 #--------------------------------------------------------------------------------------------------
 echo "[+]Filtering Paramas From urls..." 
-cat $1/recon/final_urls.txt | grep = | qsreplace noor >> $url/recon/final_params.txt 
+cat $1/recon/final_urls.txt | grep = | qsreplace 3sr >> $url/recon/final_params.txt 
 figlet "Fuzzing Urls"
 #--------------------------------------------------------------------------------------------------
 #-------------------------------Checking For HTMLi Injection---------------------------------------
