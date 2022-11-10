@@ -9,8 +9,7 @@ chmod 777 install.sh
 chmod 3sr.sh
 ```
 
-###Run
-
+### Run
 ```
 ./3sr.sh target.com
 ```
