@@ -91,3 +91,8 @@ figlet "Fuzzing Urls"
 echo "[+]Testing For HTML Injection...." 
 cat $url/recon/final_params.txt | qsreplace '"><u>hyper</u>' | tee $url/recon/temp.txt && cat $url/recon/temp.txt | while read host do ; do curl --silent --path-as-is --insecure "$host" | grep -qs "<u>hyper</u>" && echo "$host"; done > $url/htmli.txt
 rm $url/recon/temp.txt
+#--------------------------------------------------------------------------------------------------
+#-------------------------------Checking For XSS Injection-----------------------------------------
+#--------------------------------------------------------------------------------------------------
+echo "[+]Testing For XSS Injection...." 
+dalfox file $url/htmli.txt -o $url/xss.txt
